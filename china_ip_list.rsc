@@ -1,9 +1,10 @@
-#Last Modified: Sun Dec  7 12:00:43 UTC 2025
+#Last Modified: Sun Dec  7 12:26:29 UTC 2025
 /log info "Start updating CN_IP_List!"
 /log info "Start removing old list!"
 /ip firewall address-list remove [/ip firewall address-list find list=CN]
 /log info "Remove finished!"
 /log info "Start importing CN_IP_List!"
+/ip firewall address-list
 add list=CN address=1.0.1.0/24 
 add list=CN address=1.0.2.0/23 
 add list=CN address=1.0.8.0/21 
