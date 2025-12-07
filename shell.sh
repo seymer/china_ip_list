@@ -1,10 +1,6 @@
 {
 TZ="Asia/Shanghai" 
 echo -e "#Last Modified: $(date)"
-echo "/log info \"Start updating CN_IP_List!\""
-echo "/log info \"Start removing old list!\""
-echo "/ip firewall address-list remove [/ip firewall address-list find list=CN]"
-echo "/log info \"Remove finished!\""
 echo "/log info \"Start importing CN_IP_List!\""
 echo "/ip firewall address-list"
 nets=`cat ./china_ip_list.txt`
