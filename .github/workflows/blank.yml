@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  schedule:
+    - cron: 0 20 * * 1
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+
+    - name: Run 
+      run: |
+        wget https://raw.githubusercontent.com/zhufengme/block_cn_files/master/cn_ip_list.txt
+        chmod +x ./shell.sh
+        ./shell.sh > china_ip_list.rsc
+        rm -rf china_ip_list.txt
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "github-actions[bot]"
+        git add .
+        git commit -m "Update rsc file"
+        git push -f
