@@ -19,10 +19,9 @@ jobs:
 
     - name: Run 
       run: |
-        wget https://raw.githubusercontent.com/zhufengme/block_cn_files/master/cn_ip_list.txt
+        wget -O china_ip_list.txt https://raw.githubusercontent.com/zhufengme/block_cn_files/master/cn_ip_list.txt
         chmod +x ./shell.sh
         ./shell.sh > china_ip_list.rsc
-        rm -rf china_ip_list.txt
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git config --global user.name "github-actions[bot]"
         git add .
