@@ -1,4 +1,4 @@
-#Last Modified: Sat Jun 20 07:52:09 UTC 2026
+#Last Modified: Sat Jun 27 06:53:55 UTC 2026
 /log info "Start importing CN_IP_List!"
 /ip firewall address-list
 add list=CN address=1.0.1.0/24 
